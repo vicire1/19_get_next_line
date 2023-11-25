@@ -6,11 +6,12 @@
 /*   By: vdecleir <vdecleir@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 15:01:19 by vdecleir          #+#    #+#             */
-/*   Updated: 2023/11/25 15:58:34 by vdecleir         ###   ########.fr       */
+/*   Updated: 2023/11/25 18:58:34 by vdecleir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+
 static char	*leftover(char	*stock)
 {
 	unsigned int	i;
@@ -43,11 +44,7 @@ static char	*clean_stock(char *stock, unsigned int i)
 		i++;
 	next_line = ft_calloc(i + 1, sizeof(char));
 	if (!next_line)
-	{
-		free(stock);
-		stock = NULL;
 		return (NULL);
-	}
 	i = 0;
 	while (stock[i] != '\n' && stock[i])
 	{
@@ -66,7 +63,7 @@ static char	*clean_stock(char *stock, unsigned int i)
 static char	*add_stock(int fd, char *stock, int char_read)
 {
 	char	buf[BUFFER_SIZE + 1];
-	
+
 	if (!stock)
 		stock = ft_calloc(1, 1);
 	while (char_read > 0)
@@ -76,6 +73,8 @@ static char	*add_stock(int fd, char *stock, int char_read)
 		char_read = read(fd, buf, BUFFER_SIZE);
 		if (char_read < 0)
 		{
+			free(stock);
+			stock = NULL;
 			buf[0] = '\0';
 			return (NULL);
 		}
@@ -92,12 +91,6 @@ char	*get_next_line(int fd)
 
 	if (fd < 0 || BUFFER_SIZE <= 0 || BUFFER_SIZE >= INT_MAX)
 		return (NULL);
-	if (read(fd, 0, 0) < 0)
-	{
-		free(stock);
-		stock = NULL;
-		return (NULL);
-	}
 	stock = add_stock(fd, stock, 1);
 	if (!stock || stock[0] == '\0')
 	{
@@ -106,13 +99,17 @@ char	*get_next_line(int fd)
 		return (NULL);
 	}
 	next_line = clean_stock(stock, 0);
+	if (!next_line)
+	{
+		free(stock);
+		stock = NULL;
+	}
 	stock = leftover(stock);
 	return (next_line);
 }
 
 // #include <fcntl.h>
 // #include <stdio.h>
-
 
 // int main()
 // {

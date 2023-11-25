@@ -6,7 +6,7 @@
 /*   By: vdecleir <vdecleir@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 15:01:31 by vdecleir          #+#    #+#             */
-/*   Updated: 2023/11/23 20:37:41 by vdecleir         ###   ########.fr       */
+/*   Updated: 2023/11/25 18:47:42 by vdecleir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,11 @@ char	*ft_substr(char *s, unsigned int start)
 		i++;
 	sub = ft_calloc(i + 1, sizeof(char));
 	if (!sub)
+	{
+		free(s);
+		s = NULL;
 		return (NULL);
+	}
 	i = 0;
 	while (start + i < ft_strlen(s))
 	{
