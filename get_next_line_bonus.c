@@ -6,7 +6,7 @@
 /*   By: vdecleir <vdecleir@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 14:52:52 by vdecleir          #+#    #+#             */
-/*   Updated: 2023/11/25 18:48:31 by vdecleir         ###   ########.fr       */
+/*   Updated: 2023/11/28 17:06:54 by vdecleir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ char	*get_next_line(int fd)
 	static char	*stock[OPEN_MAX];
 	char		*next_line;
 
-	if (fd < 0 || BUFFER_SIZE <= 0 || BUFFER_SIZE >= INT_MAX)
+	if (fd < 0)
 		return (NULL);
 	stock[fd] = add_stock(fd, stock[fd], 1);
 	if (!stock[fd] || stock[fd][0] == '\0')

@@ -6,7 +6,7 @@
 /*   By: vdecleir <vdecleir@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 15:01:19 by vdecleir          #+#    #+#             */
-/*   Updated: 2023/11/25 19:02:48 by vdecleir         ###   ########.fr       */
+/*   Updated: 2023/11/28 17:17:36 by vdecleir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ char	*get_next_line(int fd)
 	static char	*stock;
 	char		*next_line;
 
-	if (fd < 0 || BUFFER_SIZE <= 0 || BUFFER_SIZE >= INT_MAX)
+	if (fd < 0)
 		return (NULL);
 	stock = add_stock(fd, stock, 1);
 	if (!stock || stock[0] == '\0')
@@ -113,7 +113,7 @@ char	*get_next_line(int fd)
 
 // int main()
 // {
-// 	int fd = open("big", O_RDONLY);
+// 	int fd = open("hello.txt", O_RDONLY);
 // 	char	*str;
 // 	str = get_next_line(fd);
 // 	while (str)

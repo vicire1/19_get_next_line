@@ -6,7 +6,7 @@
 /*   By: vdecleir <vdecleir@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:59:23 by vdecleir          #+#    #+#             */
-/*   Updated: 2023/11/23 15:53:03 by vdecleir         ###   ########.fr       */
+/*   Updated: 2023/11/28 17:11:30 by vdecleir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 15
+# elif BUFFER_SIZE > 100000 || BUFFER_SIZE < 1
+#  undef BUFFER_SIZE
+#  define BUFFER_SIZE 100000
 # endif
 
 # include <unistd.h>
