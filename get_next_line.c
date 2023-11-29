@@ -6,7 +6,7 @@
 /*   By: vdecleir <vdecleir@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 15:01:19 by vdecleir          #+#    #+#             */
-/*   Updated: 2023/11/29 18:12:22 by vdecleir         ###   ########.fr       */
+/*   Updated: 2023/11/29 18:16:07 by vdecleir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ static char	*clean_stock(char *stock, unsigned int i)
 		i++;
 	if (stock[i] == '\n')
 		i++;
-	next_line = ft_calloc(i + 1, sizeof(char));
+	next_line = malloc(sizeof(char) * (i + 1));
 	if (!next_line)
 		return (NULL);
 	i = 0;
