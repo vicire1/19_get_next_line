@@ -6,7 +6,7 @@
 /*   By: vdecleir <vdecleir@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 15:01:31 by vdecleir          #+#    #+#             */
-/*   Updated: 2023/11/25 18:47:42 by vdecleir         ###   ########.fr       */
+/*   Updated: 2023/11/29 18:04:58 by vdecleir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	*ft_strjoin(char *s1, char *s2, int i, int j)
 
 	if (!s1 || !s2)
 		return (NULL);
-	join = ft_calloc(ft_strlen(s1) + ft_strlen(s2) + 1, sizeof(char));
+	join = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
 	if (!join)
 	{
 		free(s1);
@@ -83,7 +83,7 @@ char	*ft_substr(char *s, unsigned int start)
 		return (0);
 	while (start + i < ft_strlen(s))
 		i++;
-	sub = ft_calloc(i + 1, sizeof(char));
+	sub = malloc(sizeof(char) * (i + 1));
 	if (!sub)
 	{
 		free(s);
