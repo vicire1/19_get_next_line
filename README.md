@@ -1,6 +1,6 @@
 # Get_Next_Line
 
-![GNL](https://github.com/vicire1/GNL/assets/111586308/259ad28b-d089-4944-be11-67c16f9a7fbc)
+<img width="654" alt="Screen Shot 2024-09-02 at 5 48 39 PM" src="https://github.com/user-attachments/assets/d42866fe-7b13-4c51-8cb1-97c2e8c323c8">
 
 ## Description
 
