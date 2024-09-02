@@ -44,8 +44,6 @@ The **Get Next Line** project involves writing a function that reads a line from
 
 ## Compilation
 
-To compile the project, ensure that your Makefile includes the following rules: `all`, `clean`, `fclean`, `re`, and `bonus` (if applicable).
-
 1. **Compile the library:**
 
    ```bash
