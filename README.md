@@ -42,11 +42,6 @@ The **Get Next Line** project involves writing a function that reads a line from
     - Support multiple file descriptors simultaneously without losing track of the current reading position.
     - Use only one static variable per file descriptor.
 
-  - File naming for the bonus part:
-    - `get_next_line_bonus.c`
-    - `get_next_line_bonus.h`
-    - `get_next_line_utils_bonus.c`
-
 ## Compilation
 
 To compile the project, ensure that your Makefile includes the following rules: `all`, `clean`, `fclean`, `re`, and `bonus` (if applicable).
