@@ -34,7 +34,7 @@ The **Get Next Line** project involves writing a function that reads a line from
   - Compilation:
     - The function should be compiled with the following command, where `42` is an example buffer size:
       ```bash
-      cc -Wall -Wextra -Werror -D BUFFER_SIZE=42 <files>.c
+      cc -Wall -Wextra -Werror -D (BUFFER_SIZE=42) <files>.c
       ```
 
 - **Bonus Part:**
