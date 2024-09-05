@@ -97,5 +97,5 @@ int main(void) {
 To compile a program using Get_next_line:
 
 ```bash
-gcc -Wall -Wextra -Werror -D BUFFER_SIZE=42 your_program.c get_next_line.c get_next_line_utils.c -o your_program
+gcc -Wall -Wextra -Werror -D (BUFFER_SIZE=42) your_program.c get_next_line.c get_next_line_utils.c -o your_program
 ```
